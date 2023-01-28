@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+    <link rel="stylesheet" href="css/style_quest.css">
+</head>
+
+<body>
+    <!-- Crie um método que receba um array de números e retorne a média e a mediana deles. -->
+
+    <script>
+        function inserirNumero() {
+            let num = document.getElementById('numero').value
+
+            if (num === "") {
+                alert("Digite um número")
+            } else {
+                document.getElementById("arrayNumeros").innerHTML += num + " - "
+
+                document.getElementById('numero').value = ""
+                document.getElementById('numero').focus()
+            }
+        }
+
+        function mediaMediana() {
+            let numeros = document.getElementById("arrayNumeros").innerHTML.split(" - ")
+            numeros.pop()
+
+            let valorSoma = 0
+
+            for (let i = 0; i < numeros.length; i++) {
+                valorSoma += parseInt(numeros[i])
+            }
+
+            let media = valorSoma / numeros.length
+            document.getElementById("media").value = media
+
+            // Ordenar valores numéricos:
+            function ordenaNumeros(a, b) {
+                return a - b
+            }
+            numeros.sort(ordenaNumeros)
+
+            let mediana = 0
+            let x = numeros.length / 2
+
+            if (numeros.length % 2 == 1) {
+                mediana = numeros[Math.floor(x)]
+            } else {
+                mediana = (parseInt(numeros[x - 1]) + parseInt(numeros[x])) / 2
+            }
+
+            document.getElementById("mediana").value = mediana
+
+        }
+
+        function resetForm() {
+            document.getElementById("arrayNumeros").innerHTML = ""
+            document.getElementById('numero').value = ""
+            document.getElementById('numero').focus()
+
+            document.getElementById("media").value = ""
+            document.getElementById("mediana").value = ""
+        }
+    </script>
+
+    <nav>
+        <img src="img/logo.png">
+    </nav>
+
+    <div class="panel">
+        <div class="textos">
+            <input type="number" id="numero" placeholder="Digite um número">
+            <button id="inserir" onclick="inserirNumero()">Inserir</button>
+        </div>
+
+        <span id="arrayNumeros"></span>
+
+        <div class="botoes">
+            <button onclick="mediaMediana()">Calcular</button>
+            <button onclick="resetForm()">Apagar</button>
+        </div>
+
+        <div class="textos" id="mediaMediana">
+            <span>Média:</span>
+            <input type="text" id="media" disabled>
+            <span>Mediana:</span>
+            <input type="text" id="mediana" disabled>
+        </div>
+    </div>
+
+    <div class="voltar">
+        <button onclick="window.location.href = 'index.html'">Voltar</button>
+    </div>
+</body>
+
+</html>

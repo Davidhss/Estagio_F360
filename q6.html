@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 6</title>
+</head>
+
+<body>
+    <!-- Em desenvolvimento... -->
+
+    <!-- 
+        Precisamos de um programa que mostre quantos MB de dados cada usuário tem em nosso servidor e a porcentagem de uso comparado aos MBs de todos os usuários. Para isso, foi disponibilizado um arquivo chamado usuarios.txt nesse link (https://raw.githubusercontent.com/f360-dev/provas/master/usuarios.txt), onde a primeira coluna mostra o usuário e a segunda mostra quantos bytes de arquivos ele tem em nosso servidor.
+
+        Os dados do usuário devem ser salvos em memória para que possamos consultar as informações mais rapidamente. Você deverá criar um método separado para converter os bytes em MB e outro método para descobrir a porcentagem. Você deverá também criar métodos para extrair relatórios que devem ser salvos com o nome 'relatorio.txt' 
+    -->
+
+    <script>
+        function converterMB() {
+            let valorbyte = document.getElementById("byte").value
+
+            let valorKB = valorbyte / 1024
+
+            let valorMB = valorKB / 1024
+
+            document.getElementById("mb").value = valorMB.toFixed(2)
+        }
+    </script>
+
+    <table border="1px">
+        <tr>
+            <td>Alexandre</td>
+            <td>456123789</td>
+        </tr>
+        <tr>
+            <td>Anderson</td>
+            <td>1245698456</td>
+        </tr>
+        <tr>
+            <td>Antonio</td>
+            <td>123456456</td>
+        </tr>
+        <tr>
+            <td>Carlos</td>
+            <td>91257581</td>
+        </tr>
+        <tr>
+            <td>Cesar</td>
+            <td>987458</td>
+        </tr>
+        <tr>
+            <td>Rosemary</td>
+            <td>789456125</td>
+        </tr>
+    </table>
+
+    <br> <br>
+
+    Bytes: <input type="text" id="byte"> <button onclick="converterMB()">Calcular</button>
+
+    <br> <br>
+
+    MB: <input type="text" disabled id="mb">
+
+</body>
+
+</html>

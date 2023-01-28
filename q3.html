@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+    <link rel="stylesheet" href="css/style_quest.css">
+</head>
+
+<body>
+    <!-- Em nossa plataforma, temos as vendas de adquirentes e cada uma delas cobra uma taxa de administração diferente. Exemplo: Se a venda for R$150,00 e o percentual da adquirente é 10%, a taxa cobrada dessa venda será R$15,00.
+
+    Faça a criação de um método que receba o valor da venda, o valor da taxa e retorne o percentual da taxa cobrada. -->
+
+    <script>
+        function percentualTaxa() {
+            let valorVenda = document.getElementById('valor').value
+            let valorTaxa = document.getElementById('taxa').value
+
+            if (valorVenda === "" || valorTaxa === "") {
+                alert("Preencha os campos")
+            } else {
+                let perc = (100 - ((valorVenda - valorTaxa) / valorVenda * 100))
+
+                document.getElementById('percentual').value = perc.toFixed(2) + "%"
+
+                document.getElementById("valor").value = ""
+                document.getElementById("taxa").value = ""
+                document.getElementById("valor").focus()
+            }
+        }
+    </script>
+
+    <nav>
+        <img src="img/logo.png">
+    </nav>
+
+    <div class="panel">
+        <div class="textos">
+            <input type="number" id="valor" placeholder="Valor da venda">
+
+            <input type="number" id="taxa" placeholder="Valor da taxa">
+        </div>
+
+        <button onclick="percentualTaxa()">Calcular</button>
+
+        <div class="textos">
+            <input type="text" id="percentual" disabled>
+        </div>
+    </div>
+
+    <div class="voltar">
+        <button onclick="window.location.href = 'index.html'">Voltar</button>
+    </div>
+</body>
+
+</html>

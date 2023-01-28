@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5</title>
+    <link rel="stylesheet" href="css/style_quest.css">
+</head>
+
+<body>
+    <!-- Crie um método que inverta uma string, colocando um espaço toda vez que o caractere for uma vogal.
+Exemplo: "animal" ==>  "la mi na " -->
+
+    <script>
+        function inverterPalavra() {
+            let palavra = document.getElementById('word').value
+            let novaPalavra = ""
+
+            // Transforma a palavra em um Array
+            let arrayPalavra = palavra.split("")
+
+            // Coloca o Array de trás pra frente
+            let reverseArray = arrayPalavra.reverse()
+
+            // Junta o array, formando assim uma string e convertendo ela em letras minúsculas
+            palavra = reverseArray.join("").toLowerCase()
+
+            for (let i = 0; i < palavra.length; i++) {
+                if (palavra[i] == "a" || palavra[i] == "e" || palavra[i] == "i" || palavra[i] == "o" || palavra[i] == "u") {
+                    novaPalavra = novaPalavra + palavra[i] + " "
+                } else {
+                    novaPalavra = novaPalavra + palavra[i]
+                }
+            }
+
+            document.getElementById('resultado').value = novaPalavra
+        }
+    </script>
+
+    <nav>
+        <img src="img/logo.png">
+    </nav>
+
+    <div class="panel">
+        <div class="textos">
+            <input onkeyup="inverterPalavra()" type="text" id="word" placeholder="Digite aqui"
+                style="border-bottom: 3px solid #266FFF;">
+        </div>
+
+        <div class="textos">
+            <input type="text" id="resultado" disabled>
+        </div>
+    </div>
+
+    <div class="voltar">
+        <button onclick="window.location.href = 'index.html'">Voltar</button>
+    </div>
+</body>
+
+</html>

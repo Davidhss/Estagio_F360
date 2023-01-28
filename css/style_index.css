@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: none;
+}
+
+#painel {
+    display: flex;
+    min-width: 30em;
+    min-height: 21em;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 200px;
+    position: relative;
+}
+
+.card {
+    width: 220px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-image: linear-gradient(60deg, #176ce3, #084acf);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.395);
+    transition: .3s ease;
+    cursor: default;
+    gap: 15px;
+    user-select: none;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.desenvolvimento {
+    background-image: linear-gradient(60deg, #7b7b7b, #4f5052);
+}
+
+.card .titulo {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.413);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 20px;
+}
+
+.card .prod {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #266FFF;
+}
+
+nav {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+nav img {
+    height: 80px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.autor {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    user-select: none;
+    cursor: default;
+}

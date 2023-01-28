@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: none;
+}
+
+nav {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+nav img {
+    height: 80px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.panel {
+    height: 500px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.textos {
+    display: flex;
+    gap: 20px;
+}
+
+.textos input {
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-bottom: 3px solid #266FFF;
+    font-weight: 600;
+    color: #585858;
+}
+
+.textos input[type="text"] {
+    border: none;
+    text-align: center;
+}
+
+.textos input:focus {
+    outline: none;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #266FFF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+    border-radius: 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    letter-spacing: 1.8px;
+}
+
+.voltar button {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    transform: scale(.7);
+}
+
+#inserir {
+    width: 130px;
+    height: 40px;
+    font-size: .8em;
+    border-radius: 5px;
+}
+
+#arrayNumeros {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    color: #585858;
+}
+
+#mediaMediana {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    color: #585858;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
